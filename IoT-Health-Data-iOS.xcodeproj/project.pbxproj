@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		FEC4F19E2DDF4BF30006B00C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEC4F1882DDF4BF30006B00C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEC4F18F2DDF4BF30006B00C;
+			remoteInfo = "IoT-Health-Data-iOS";
+		};
+		FEC4F1A82DDF4BF30006B00C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEC4F1882DDF4BF30006B00C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEC4F18F2DDF4BF30006B00C;
+			remoteInfo = "IoT-Health-Data-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FEC4F1902DDF4BF30006B00C /* IoT-Health-Data-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IoT-Health-Data-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC4F19D2DDF4BF30006B00C /* IoT-Health-Data-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-Health-Data-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC4F1A72DDF4BF30006B00C /* IoT-Health-Data-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-Health-Data-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "IoT-Health-Data-iOS";
+			sourceTree = "<group>";
+		};
+		FEC4F1A02DDF4BF30006B00C /* IoT-Health-Data-iOSTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "IoT-Health-Data-iOSTests";
+			sourceTree = "<group>";
+		};
+		FEC4F1AA2DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "IoT-Health-Data-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEC4F18D2DDF4BF30006B00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F19A2DDF4BF30006B00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F1A42DDF4BF30006B00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEC4F1872DDF4BF30006B00C = {
+			isa = PBXGroup;
+			children = (
+				FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */,
+				FEC4F1A02DDF4BF30006B00C /* IoT-Health-Data-iOSTests */,
+				FEC4F1AA2DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */,
+				FEC4F1912DDF4BF30006B00C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEC4F1912DDF4BF30006B00C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4F1902DDF4BF30006B00C /* IoT-Health-Data-iOS.app */,
+				FEC4F19D2DDF4BF30006B00C /* IoT-Health-Data-iOSTests.xctest */,
+				FEC4F1A72DDF4BF30006B00C /* IoT-Health-Data-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEC4F18F2DDF4BF30006B00C /* IoT-Health-Data-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEC4F1B12DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOS" */;
+			buildPhases = (
+				FEC4F18C2DDF4BF30006B00C /* Sources */,
+				FEC4F18D2DDF4BF30006B00C /* Frameworks */,
+				FEC4F18E2DDF4BF30006B00C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */,
+			);
+			name = "IoT-Health-Data-iOS";
+			packageProductDependencies = (
+			);
+			productName = "IoT-Health-Data-iOS";
+			productReference = FEC4F1902DDF4BF30006B00C /* IoT-Health-Data-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEC4F19C2DDF4BF30006B00C /* IoT-Health-Data-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEC4F1B42DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOSTests" */;
+			buildPhases = (
+				FEC4F1992DDF4BF30006B00C /* Sources */,
+				FEC4F19A2DDF4BF30006B00C /* Frameworks */,
+				FEC4F19B2DDF4BF30006B00C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEC4F19F2DDF4BF30006B00C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FEC4F1A02DDF4BF30006B00C /* IoT-Health-Data-iOSTests */,
+			);
+			name = "IoT-Health-Data-iOSTests";
+			packageProductDependencies = (
+			);
+			productName = "IoT-Health-Data-iOSTests";
+			productReference = FEC4F19D2DDF4BF30006B00C /* IoT-Health-Data-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FEC4F1A62DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEC4F1B72DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOSUITests" */;
+			buildPhases = (
+				FEC4F1A32DDF4BF30006B00C /* Sources */,
+				FEC4F1A42DDF4BF30006B00C /* Frameworks */,
+				FEC4F1A52DDF4BF30006B00C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEC4F1A92DDF4BF30006B00C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FEC4F1AA2DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */,
+			);
+			name = "IoT-Health-Data-iOSUITests";
+			packageProductDependencies = (
+			);
+			productName = "IoT-Health-Data-iOSUITests";
+			productReference = FEC4F1A72DDF4BF30006B00C /* IoT-Health-Data-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEC4F1882DDF4BF30006B00C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					FEC4F18F2DDF4BF30006B00C = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					FEC4F19C2DDF4BF30006B00C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = FEC4F18F2DDF4BF30006B00C;
+					};
+					FEC4F1A62DDF4BF30006B00C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = FEC4F18F2DDF4BF30006B00C;
+					};
+				};
+			};
+			buildConfigurationList = FEC4F18B2DDF4BF30006B00C /* Build configuration list for PBXProject "IoT-Health-Data-iOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEC4F1872DDF4BF30006B00C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FEC4F1912DDF4BF30006B00C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEC4F18F2DDF4BF30006B00C /* IoT-Health-Data-iOS */,
+				FEC4F19C2DDF4BF30006B00C /* IoT-Health-Data-iOSTests */,
+				FEC4F1A62DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEC4F18E2DDF4BF30006B00C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F19B2DDF4BF30006B00C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F1A52DDF4BF30006B00C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEC4F18C2DDF4BF30006B00C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F1992DDF4BF30006B00C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC4F1A32DDF4BF30006B00C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FEC4F19F2DDF4BF30006B00C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEC4F18F2DDF4BF30006B00C /* IoT-Health-Data-iOS */;
+			targetProxy = FEC4F19E2DDF4BF30006B00C /* PBXContainerItemProxy */;
+		};
+		FEC4F1A92DDF4BF30006B00C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEC4F18F2DDF4BF30006B00C /* IoT-Health-Data-iOS */;
+			targetProxy = FEC4F1A82DDF4BF30006B00C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FEC4F1AF2DDF4BF30006B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEC4F1B02DDF4BF30006B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEC4F1B22DDF4BF30006B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FEC4F1B32DDF4BF30006B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FEC4F1B52DDF4BF30006B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IoT-Health-Data-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IoT-Health-Data-iOS";
+			};
+			name = Debug;
+		};
+		FEC4F1B62DDF4BF30006B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IoT-Health-Data-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IoT-Health-Data-iOS";
+			};
+			name = Release;
+		};
+		FEC4F1B82DDF4BF30006B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IoT-Health-Data-iOS";
+			};
+			name = Debug;
+		};
+		FEC4F1B92DDF4BF30006B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monorama.IoT-Health-Data-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IoT-Health-Data-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEC4F18B2DDF4BF30006B00C /* Build configuration list for PBXProject "IoT-Health-Data-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC4F1AF2DDF4BF30006B00C /* Debug */,
+				FEC4F1B02DDF4BF30006B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC4F1B12DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC4F1B22DDF4BF30006B00C /* Debug */,
+				FEC4F1B32DDF4BF30006B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC4F1B42DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC4F1B52DDF4BF30006B00C /* Debug */,
+				FEC4F1B62DDF4BF30006B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC4F1B72DDF4BF30006B00C /* Build configuration list for PBXNativeTarget "IoT-Health-Data-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC4F1B82DDF4BF30006B00C /* Debug */,
+				FEC4F1B92DDF4BF30006B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEC4F1882DDF4BF30006B00C /* Project object */;
+}
