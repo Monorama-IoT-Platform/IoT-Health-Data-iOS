@@ -10,10 +10,9 @@ struct SignInView: View {
     
     
     init(appState: AppState) {
-        self.appState = appState                   // 이 부분 꼭 추가
+        self.appState = appState
         _viewModel = StateObject(wrappedValue: SignInViewModel(appState: appState))
     }
-
 
     var body: some View {
         NavigationStack {
@@ -45,8 +44,8 @@ struct SignInView: View {
                         switch result {
                         case .success(let authResults):
                             if let credential = authResults.credential as? ASAuthorizationAppleIDCredential,
-                               let identityToken = credential.identityToken,
-                               let tokenString = String(data: identityToken, encoding: .utf8) {
+                                let identityToken = credential.identityToken,
+                                let tokenString = String(data: identityToken, encoding: .utf8) {
                                 
                                 Task {
                                     await viewModel.signInWithApple(token: tokenString)
@@ -68,17 +67,17 @@ struct SignInView: View {
             
             
             .navigationDestination(isPresented: Binding(
-                get: { appState.isSignedIn && appState.userRole == .guest },
-                set: { if !$0 { appState.userRole = .unknown } }
+                get: { appState.isSignedIn && (appState.userRole == .GUEST || appState.userRole == .AQD_USER) },
+                set: { if !$0 { appState.userRole = .UNKNOWN } }
             )) {
                 TermsView(appState: appState)
             }
 
             .navigationDestination(isPresented: Binding(
-                get: { appState.isSignedIn && (appState.userRole == .hdUser || appState.userRole == .bothUser) },
-                set: { if !$0 { appState.userRole = .unknown } }
+                get: { appState.isSignedIn && (appState.userRole == .HD_USER || appState.userRole == .BOTH_USER) },
+                set: { if !$0 { appState.userRole = .UNKNOWN } }
             )) {
-                EmptyView() // 메인 화면
+                MainView(appState: appState)
             }
             
             .alert("로그인 실패", isPresented: $showErrorAlert) {

@@ -4,24 +4,23 @@ struct RootView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
+        
         Group {
             if !appState.isSignedIn {
-                // 로그인 안 된 상태 → 로그인 화면
                 SignInView(appState: appState)
             } else {
                 switch appState.userRole {
-                case .guest:
-                    // 로그인은 했지만 게스트 → 약관 동의 화면
+                case .GUEST, .AQD_USER:
                     TermsView(appState: appState)
-                case .hdUser, .bothUser:
-                    MainView()
+                case .HD_USER, .BOTH_USER:
+                    MainView(appState: appState)
                 default:
-                    // 기타 예외 상황은 로그인 화면
                     SignInView(appState: appState)
                 }
             }
         }
         .task {
+            print(appState.userRole, appState.isSignedIn)
             await appState.initialize()
         }
     }

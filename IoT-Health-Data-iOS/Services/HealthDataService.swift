@@ -3,7 +3,7 @@ import Foundation
 struct HealthDataService {
     func uploadHealthData(_ request: HealthDataRequest) async throws {
         let endpoint = Endpoint(
-            path: "/api/v1/health/data", // 실제 API 경로로 교체하세요
+            path: "/api/v1/health-data/realtime", // 실제 API 경로로 교체하세요
             method: .POST,
             queryItems: nil
         )

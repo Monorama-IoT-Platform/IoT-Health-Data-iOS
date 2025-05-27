@@ -3,7 +3,11 @@ import Foundation
 
 class TokenManager {
     
+    static let shared = TokenManager()
+    
     private let keychain = Keychain(service: "com.monorama.auth")
+    
+    private init() {}
     
     // MARK: - Access Token
     func saveJwtToken(_ jwt: JwtResponse) throws {
@@ -87,22 +91,24 @@ class TokenManager {
     
     func getUserRole() -> UserRole {
         guard let accessToken = readAccessToken() else {
-            return .unknown
+            return .UNKNOWN
         }
 
         guard let role = getRole(from: accessToken) else {
-            return .unknown
+            return .UNKNOWN
         }
 
         switch role {
         case "GUEST":
-            return .guest
+            return .GUEST
         case "HD_USER":
-            return .hdUser
-        case "BOTH":
-            return .bothUser
+            return .HD_USER
+        case "AQD_USER":
+            return .AQD_USER
+        case "BOTH_USER":
+            return .BOTH_USER
         default:
-            return .unknown
+            return .UNKNOWN
         }
     }
     

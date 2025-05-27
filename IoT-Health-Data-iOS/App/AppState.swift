@@ -2,15 +2,16 @@ import Foundation
 
 @MainActor
 class AppState: ObservableObject {
-    @Published var userRole: UserRole = .unknown
+    @Published var userRole: UserRole = .UNKNOWN
     @Published var isSignedIn: Bool = false
 
-    private let tokenManager = TokenManager()
+    private let tokenManager = TokenManager.shared
     private let authService = AuthService()
 
     func initialize() async {
         if let accessToken = tokenManager.readAccessToken() {
             print(accessToken)
+            print(tokenManager.getUserRole())
             if tokenManager.isTokenExpired(accessToken) {
                 if let refreshToken = tokenManager.readRefreshToken() {
                     do {
@@ -27,7 +28,7 @@ class AppState: ObservableObject {
                 updateUserRole()
             }
         } else {
-            userRole = .guest
+            userRole = .GUEST
             isSignedIn = false
         }
     }
@@ -35,15 +36,12 @@ class AppState: ObservableObject {
     func updateUserRole() {
         let role = tokenManager.getUserRole()
         userRole = role
-        isSignedIn = (role != .unknown) // ✅ guest도 로그인한 상태로 간주
+        isSignedIn = (role != .UNKNOWN)
     }
 
     func logout() {
         try? tokenManager.deleteAccessToken()
         try? tokenManager.deleteRefreshToken()
-        userRole = .guest
         isSignedIn = false
     }
-
-
 }

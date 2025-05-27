@@ -1,31 +1,7 @@
 import SwiftUI
 
-enum AgreementType: Identifiable {
-    case privacyPolicy, termsOfService, healthData, locationData
-
-    var id: Int { hashValue }
-
-    var title: String {
-        switch self {
-        case .privacyPolicy: return "Privacy Policy"
-        case .termsOfService: return "Terms of Service"
-        case .healthData: return "Health Data Consent"
-        case .locationData: return "Location Data Terms"
-        }
-    }
-
-    var content: String {
-        switch self {
-        case .privacyPolicy: return "여기에 Privacy Policy 자세한 내용을 작성하세요..."
-        case .termsOfService: return "여기에 Terms of Service 자세한 내용을 작성하세요..."
-        case .healthData: return "여기에 Health Data Consent 자세한 내용을 작성하세요..."
-        case .locationData: return "여기에 Location Data Terms 자세한 내용을 작성하세요..."
-        }
-    }
-}
-
 struct TermsView: View {
-    
+    @StateObject private var viewModel: BothUserViewModel
     @ObservedObject var appState: AppState
     
     @State private var agreePrivacyPolicy = false
@@ -36,6 +12,8 @@ struct TermsView: View {
     @State private var selectedSheet: AgreementType?
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
+    
+    @State private var navigationPath = NavigationPath()
 
     enum NavigationTarget: Hashable {
         case personalInfoInput(
@@ -44,7 +22,14 @@ struct TermsView: View {
             agreeConsentOfHealthData: Bool,
             agreeLocationDataTermsOfService: Bool)
     }
-    @State private var navigationPath = NavigationPath()
+    
+    init(appState: AppState) {
+        self.appState = appState
+        _viewModel = StateObject(wrappedValue: BothUserViewModel(appState: appState))
+    }
+    
+                             
+    
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -74,13 +59,19 @@ struct TermsView: View {
 
                     Button(action: {
                         if allRequiredAgreed {
-                            navigationPath.append(
-                                NavigationTarget.personalInfoInput(
-                                    agreePrivacyPolicy: agreePrivacyPolicy,
-                                    agreeTermsOfService: agreeTermsOfService,
-                                    agreeConsentOfHealthData: agreeConsentOfHealthData,
-                                    agreeLocationDataTermsOfService: agreeLocationDataTermsOfService)
-                            )
+                            if appState.userRole == .GUEST {
+                                navigationPath.append(
+                                    NavigationTarget.personalInfoInput(
+                                        agreePrivacyPolicy: agreePrivacyPolicy,
+                                        agreeTermsOfService: agreeTermsOfService,
+                                        agreeConsentOfHealthData: agreeConsentOfHealthData,
+                                        agreeLocationDataTermsOfService: agreeLocationDataTermsOfService)
+                                )
+                            } else if appState.userRole == .AQD_USER {
+                                Task {
+                                    await viewModel.updateToBothUser()
+                                }
+                            }
                         } else {
                             errorMessage = "필수 약관에 모두 동의해주세요."
                             showErrorAlert = true

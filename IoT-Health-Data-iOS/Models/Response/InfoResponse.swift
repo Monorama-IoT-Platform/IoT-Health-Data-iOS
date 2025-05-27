@@ -1,13 +1,17 @@
 import Foundation
 
 struct InfoResponse: Decodable {
+    
+    // Project Info
+    let pmEmail: String
     let projectTitle: String
     let participant: Int
     let description: String
-    let startDate: Int64
-    let endDate: Int64
-    let createdDate: Int64
+    let startDate: String
+    let endDate: String
+    let createdAt: String
 
+    // Personal Info
     let email: Bool
     let gender: Bool
     let phoneNumber: Bool
@@ -17,6 +21,7 @@ struct InfoResponse: Decodable {
     let weight: Bool
     let name: Bool
 
+    // Health Data Info
     let stepCount: Bool
     let runningSpeed: Bool
     let basalEnergyBurned: Bool
@@ -29,10 +34,10 @@ struct InfoResponse: Decodable {
     let respiratoryRate: Bool
     let bodyTemperature: Bool
     let ecgData: Bool
-
     let watchDeviceLatitude: Bool
     let watchDeviceLongitude: Bool
 
+    // Air Quality Data Info
     let pm25Value: Bool
     let pm25Level: Bool
     let pm10Value: Bool

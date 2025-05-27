@@ -4,7 +4,7 @@ import SwiftUI
 @MainActor
 class PersonalInfoViewModel: ObservableObject {
     private let personalInfoService = PersonalInfoService()
-    private let tokenManager = TokenManager()
+    private let tokenManager = TokenManager.shared
     private let appState: AppState
 
     init(appState: AppState) {
@@ -27,7 +27,7 @@ class PersonalInfoViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var isSignedIn = false
-    @Published var userRole: UserRole = .unknown
+    @Published var userRole: UserRole = .UNKNOWN
 
     var getEmail: String {
         emailId + emailDomain
@@ -49,15 +49,15 @@ class PersonalInfoViewModel: ObservableObject {
         let info = PersonalInfoRequest(
             name: name,
             dateOfBirth: birthDate.toYYYYMMdd(),
-            gender: gender,
-            bloodType: bloodType,
+            gender: Gender.from(gender),
+            bloodType: BloodType.from(bloodType),
             height: height,
             weight: weight,
             email: getEmail,
-            nationalCode: nationalCode,
+            nationalCode: NationalCode.from(nationalCode),
             phoneNumber: phoneNumber
         )
-
+        
         do {
             let jwt = try await personalInfoService.regist(personalInfo: info)
             

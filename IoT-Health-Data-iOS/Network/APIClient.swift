@@ -2,18 +2,23 @@ import Foundation
 
 class APIClient {
     
-    private let tokenManager = TokenManager()
+    private let tokenManager = TokenManager.shared
     static let shared = APIClient()
     
-
-    // ✅ 공통 JSON 인코딩 메서드
-    func encodeBody<T: Encodable>(_ value: T) throws -> Data {
+//    func encodeBody<T: Encodable>(_ value: T) throws -> Data {
+//        let encoder = JSONEncoder()
+//        encoder.dateEncodingStrategy = .iso8601
+//        return try encoder.encode(value)
+//    }
+    
+    func encodeBody<T: Encodable>(_ value: T?) throws -> Data? {
+        guard let value = value else { return nil }
+        
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         return try encoder.encode(value)
     }
 
-    // ✅ 공통 JSON 디코딩 메서드 (옵션)
     private func decoder() -> JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

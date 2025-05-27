@@ -8,7 +8,6 @@ struct PersonalInfoService {
             queryItems: nil
         )
 
-        // ✅ APIClient의 encodeBody 사용
         let body = try APIClient.shared.encodeBody(personalInfo)
 
         let wrapper = try await APIClient.shared.request(
@@ -20,7 +19,6 @@ struct PersonalInfoService {
         if wrapper.success, let jwt = wrapper.data {
             return jwt
         } else {
-            // 에러 메시지 처리 (error가 nil일 수도 있으니 기본 메시지 지정)
             throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: wrapper.error ?? "Unknown error"])
         }
     }

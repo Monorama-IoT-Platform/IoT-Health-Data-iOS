@@ -1,19 +1,22 @@
 enum UserRole {
-    case guest
-    case hdUser
-    case bothUser
-    case unknown
+    case GUEST
+    case HD_USER
+    case AQD_USER
+    case BOTH_USER
+    case UNKNOWN
 
     init(from roleString: String) {
         switch roleString {
         case "GUEST":
-            self = .guest
+            self = .GUEST
         case "HD_USER":
-            self = .hdUser
+            self = .HD_USER
+        case "AQD_USER":
+            self = .AQD_USER
         case "BOTH_USER":
-            self = .bothUser
+            self = .BOTH_USER
         default:
-            self = .unknown
+            self = .UNKNOWN
         }
     }
 }

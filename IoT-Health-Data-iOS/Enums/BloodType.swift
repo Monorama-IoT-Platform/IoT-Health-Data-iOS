@@ -1,4 +1,4 @@
-enum BloodType {
+enum BloodType: String, Codable {
     case A_PLUS
     case A_MINUS
     case B_PLUS
@@ -9,28 +9,28 @@ enum BloodType {
     case AB_MINUS
     case UNKNOWN
 
-    init(from bloodType: String) {
+    static func from(_ bloodType: String) -> BloodType {
         switch bloodType {
         case "A+":
-            self = .A_PLUS
+            return .A_PLUS
         case "A-":
-            self = .A_MINUS
+            return .A_MINUS
         case "B+":
-            self = .B_PLUS
+            return .B_PLUS
         case "B-":
-            self = .B_MINUS
+            return .B_MINUS
         case "O+":
-            self = .O_PLUS
+            return .O_PLUS
         case "O-":
-            self = .O_MINUS
+            return .O_MINUS
         case "AB+":
-            self = .AB_PLUS
+            return .AB_PLUS
         case "AB-":
-            self = .A_MINUS
+            return .A_MINUS
         case "Unknown":
-            self = .UNKNOWN
+            return .UNKNOWN
         default:
-            self = .UNKNOWN
+            return .UNKNOWN
         }
     }
 }

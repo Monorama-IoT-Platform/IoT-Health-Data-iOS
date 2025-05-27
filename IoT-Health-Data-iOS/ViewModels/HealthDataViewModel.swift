@@ -1,7 +1,10 @@
+import Foundation
+import HealthKit
+
 @MainActor
 class HealthDataViewModel: ObservableObject {
     private let healthStore = HKHealthStore()
-    private let serverUploader = ServerUploader()
+    private let healthDataService = HealthDataService()
 
     func requestAuthorization() async throws {
         let readTypes: Set<HKObjectType> = [
@@ -19,7 +22,7 @@ class HealthDataViewModel: ObservableObject {
             HKObjectType.electrocardiogramType()
         ]
 
-        try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             healthStore.requestAuthorization(toShare: nil, read: readTypes) { success, error in
                 if let error = error {
                     continuation.resume(throwing: error)
@@ -67,7 +70,7 @@ class HealthDataViewModel: ObservableObject {
                 watchDeviceLongitude: watchLongitude
             )
 
-            try await serverUploader.upload(data: request)
+            try await healthDataService.uploadHealthData(request)
 
         } catch {
             print("Error fetching/sending health data: \(error.localizedDescription)")
@@ -115,20 +118,38 @@ class HealthDataViewModel: ObservableObject {
         }
     }
 
-    private func fetchECG() async throws -> Int {
+    private func fetchECG() async throws -> String {
         let type = HKObjectType.electrocardiogramType()
-        let startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .day, value: -1, to: Date())!, end: Date())
 
         return try await withCheckedThrowingContinuation { continuation in
-            let query = HKSampleQuery(sampleType: type, predicate: predicate, limit: 100, sortDescriptors: nil) { _, results, error in
+            let query = HKSampleQuery(sampleType: type, predicate: predicate, limit: 1, sortDescriptors: nil) { _, results, error in
                 if let error = error {
                     continuation.resume(throwing: error)
+                } else if let ecg = results?.first as? HKElectrocardiogram {
+                    let classification = ecg.classification
+                    let classificationString: String
+
+                    switch classification {
+                    case .notSet: classificationString = "Not Set"
+                    case .sinusRhythm: classificationString = "Sinus Rhythm"
+                    case .atrialFibrillation: classificationString = "Atrial Fibrillation"
+                    case .inconclusiveLowHeartRate: classificationString = "Inconclusive (Low HR)"
+                    case .inconclusiveHighHeartRate: classificationString = "Inconclusive (High HR)"
+                    case .inconclusivePoorReading: classificationString = "Inconclusive (Poor Reading)"
+                    case .inconclusiveOther: classificationString = "Inconclusive (Other)"
+                    case .unrecognized: classificationString = "Unrecognized"
+                    @unknown default: classificationString = "Unknown"
+                    }
+
+                    continuation.resume(returning: classificationString)
                 } else {
-                    continuation.resume(returning: results?.count ?? 0)
+                    continuation.resume(returning: "No Data")
                 }
             }
             healthStore.execute(query)
         }
     }
+
+
 }

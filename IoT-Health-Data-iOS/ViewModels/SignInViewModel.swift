@@ -4,7 +4,7 @@ import Combine
 @MainActor
 class SignInViewModel: ObservableObject {
     private let authService = AuthService()
-    private let tokenManager = TokenManager()
+    private let tokenManager = TokenManager.shared
     private let appState: AppState
 
     init(appState: AppState) {
@@ -23,7 +23,6 @@ class SignInViewModel: ObservableObject {
 
             try? tokenManager.saveJwtToken(jwt)
             appState.updateUserRole()
-            
         } catch {
             errorMessage = "로그인 실패: \(error.localizedDescription)"
         }
