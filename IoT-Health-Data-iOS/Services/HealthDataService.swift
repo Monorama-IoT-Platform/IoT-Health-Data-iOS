@@ -1,0 +1,27 @@
+import Foundation
+
+struct HealthDataService {
+    func uploadHealthData(_ request: HealthDataRequest) async throws {
+        let endpoint = Endpoint(
+            path: "/api/v1/health/data", // 실제 API 경로로 교체하세요
+            method: .POST,
+            queryItems: nil
+        )
+
+        let body = try APIClient.shared.encodeBody(request)
+
+        let wrapper = try await APIClient.shared.request(
+            endpoint,
+            responseType: APIResponse<EmptyResponse>.self,
+            body: body
+        )
+
+        if !wrapper.success {
+            throw NSError(
+                domain: "",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: wrapper.error ?? "Unknown error occurred"]
+            )
+        }
+    }
+}

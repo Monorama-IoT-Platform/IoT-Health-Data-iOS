@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FE5A68CC2DE1964F00D59E94 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FE5A68CB2DE1964F00D59E94 /* KeychainAccess */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FEC4F19E2DDF4BF30006B00C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,36 @@
 		FEC4F1A72DDF4BF30006B00C /* IoT-Health-Data-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-Health-Data-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FEC4F1DC2DDF992F0006B00C /* Exceptions for "IoT-Health-Data-iOS" folder in "IoT-Health-Data-iOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Config/Release.xcconfig,
+				Config/Staging.xcconfig,
+				Info.plist,
+			);
+			target = FEC4F18F2DDF4BF30006B00C /* IoT-Health-Data-iOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		FEC4F1DD2DDF992F0006B00C /* Exceptions for "IoT-Health-Data-iOS" folder in "Compile Sources" phase from "IoT-Health-Data-iOS" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = FEC4F18C2DDF4BF30006B00C /* Sources */;
+			membershipExceptions = (
+				Config/Release.xcconfig,
+				Config/Staging.xcconfig,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FEC4F1DC2DDF992F0006B00C /* Exceptions for "IoT-Health-Data-iOS" folder in "IoT-Health-Data-iOS" target */,
+				FEC4F1DD2DDF992F0006B00C /* Exceptions for "IoT-Health-Data-iOS" folder in "Compile Sources" phase from "IoT-Health-Data-iOS" target */,
+			);
 			path = "IoT-Health-Data-iOS";
 			sourceTree = "<group>";
 		};
@@ -52,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5A68CC2DE1964F00D59E94 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +104,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE5A68CA2DE1964F00D59E94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEC4F1872DDF4BF30006B00C = {
 			isa = PBXGroup;
 			children = (
 				FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */,
 				FEC4F1A02DDF4BF30006B00C /* IoT-Health-Data-iOSTests */,
 				FEC4F1AA2DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */,
+				FE5A68CA2DE1964F00D59E94 /* Frameworks */,
 				FEC4F1912DDF4BF30006B00C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +152,7 @@
 			);
 			name = "IoT-Health-Data-iOS";
 			packageProductDependencies = (
+				FE5A68CB2DE1964F00D59E94 /* KeychainAccess */,
 			);
 			productName = "IoT-Health-Data-iOS";
 			productReference = FEC4F1902DDF4BF30006B00C /* IoT-Health-Data-iOS.app */;
@@ -195,6 +236,9 @@
 			);
 			mainGroup = FEC4F1872DDF4BF30006B00C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FE27AB952DE195910007DC4C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FEC4F1912DDF4BF30006B00C /* Products */;
 			projectDirPath = "";
@@ -393,10 +437,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "IoT-Health-Data-iOS/IoT-Health-Data-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IoT-Health-Data-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -411,7 +457,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -420,10 +466,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "IoT-Health-Data-iOS/IoT-Health-Data-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IoT-Health-Data-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,7 +486,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -550,6 +598,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE27AB952DE195910007DC4C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE5A68CB2DE1964F00D59E94 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE27AB952DE195910007DC4C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEC4F1882DDF4BF30006B00C /* Project object */;
 }

@@ -1,19 +1,12 @@
-//
-//  ContentView.swift
-//  IoT-Health-Data-iOS
-//
-//  Created by 모노라마 on 5/22/25.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("monomate")
+            Text("main view")
         }
         .padding()
     }
