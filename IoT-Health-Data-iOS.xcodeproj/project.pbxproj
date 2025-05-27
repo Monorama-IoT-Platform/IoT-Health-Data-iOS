@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE5A68CC2DE1964F00D59E94 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FE5A68CB2DE1964F00D59E94 /* KeychainAccess */; };
+		FE960B1B2DE5DBC50013FEA2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FE960B1A2DE5DBBD0013FEA2 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE960B1A2DE5DBBD0013FEA2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FEC4F1902DDF4BF30006B00C /* IoT-Health-Data-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IoT-Health-Data-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC4F19D2DDF4BF30006B00C /* IoT-Health-Data-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-Health-Data-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC4F1A72DDF4BF30006B00C /* IoT-Health-Data-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-Health-Data-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 		FEC4F1872DDF4BF30006B00C = {
 			isa = PBXGroup;
 			children = (
+				FE960B1A2DE5DBBD0013FEA2 /* .gitignore */,
 				FEC4F1922DDF4BF30006B00C /* IoT-Health-Data-iOS */,
 				FEC4F1A02DDF4BF30006B00C /* IoT-Health-Data-iOSTests */,
 				FEC4F1AA2DDF4BF30006B00C /* IoT-Health-Data-iOSUITests */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE960B1B2DE5DBC50013FEA2 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

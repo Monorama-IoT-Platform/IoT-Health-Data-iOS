@@ -1,6 +1,3 @@
-# macOS
-.DS_Store
-
 # Xcode
 DerivedData/
 build/
@@ -15,8 +12,6 @@ build/
 xcuserdata/
 *.xcscmblueprint
 *.xcuserstate
-*.xcconfig
-Info.plist
 
 # Swift Package Manager
 .build/
@@ -42,7 +37,7 @@ fastlane/test_output
 timeline.xctimeline
 playground.xcworkspace
 
-# Device support
+# Device support (Xcode 자동 생성 디바이스 정보)
 DeviceSupport/
 
 # IDE 설정 파일
@@ -50,4 +45,7 @@ DeviceSupport/
 *.iml
 
 # Xcode Previews
+*.icloud
+
+# Ds_Store
 *.icloud
