@@ -3,8 +3,7 @@ import SwiftUI
 struct RootView: View {
     @EnvironmentObject var appState: AppState
 
-    var body: some View {
-        
+    var body: some View {        
         Group {
             if !appState.isSignedIn {
                 SignInView(appState: appState)
@@ -20,7 +19,6 @@ struct RootView: View {
             }
         }
         .task {
-            print(appState.userRole, appState.isSignedIn)
             await appState.initialize()
         }
     }

@@ -1,11 +1,3 @@
-//
-//  Classification.swift
-//  IoT-Health-Data-iOS
-//
-//  Created by 모노라마 on 5/27/25.
-//
-
-
 public enum Classification: Int {
     case notSet = 0
     case sinusRhythm = 1

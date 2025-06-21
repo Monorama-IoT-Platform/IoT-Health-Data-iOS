@@ -444,6 +444,7 @@
 				CODE_SIGN_ENTITLEMENTS = "IoT-Health-Data-iOS/IoT-Health-Data-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SRFR7M9T35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-Health-Data-iOS/Info.plist";
@@ -473,6 +474,7 @@
 				CODE_SIGN_ENTITLEMENTS = "IoT-Health-Data-iOS/IoT-Health-Data-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SRFR7M9T35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-Health-Data-iOS/Info.plist";

@@ -28,16 +28,13 @@ struct TermsView: View {
         _viewModel = StateObject(wrappedValue: BothUserViewModel(appState: appState))
     }
     
-                             
-    
-
     var body: some View {
         NavigationStack(path: $navigationPath) {
             ScrollView {
                 VStack(spacing: 30) {
                     Spacer().frame(height: 40)
 
-                    Text("Input Personal Health Information")
+                    Text("Agreement Required")
                         .font(.title)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -48,44 +45,65 @@ struct TermsView: View {
                         .scaledToFit()
                         .frame(width: 120, height: 120)
                         .padding(.top, 20)
+                    
+                    Spacer()
 
-                    VStack(alignment: .leading, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Agreement to Terms")
+                            .font(.headline)
+                            .padding(.bottom, 8)
+                        
                         agreementToggle(title: "Privacy Policy", isOn: $agreePrivacyPolicy, type: .privacyPolicy)
                         agreementToggle(title: "Terms of Service", isOn: $agreeTermsOfService, type: .termsOfService)
                         agreementToggle(title: "Consent of Health Data", isOn: $agreeConsentOfHealthData, type: .healthData)
                         agreementToggle(title: "Location Data Terms of Service", isOn: $agreeLocationDataTermsOfService, type: .locationData)
                     }
-                    .padding(.horizontal, 30)
-
-                    Button(action: {
-                        if allRequiredAgreed {
-                            if appState.userRole == .GUEST {
-                                navigationPath.append(
-                                    NavigationTarget.personalInfoInput(
-                                        agreePrivacyPolicy: agreePrivacyPolicy,
-                                        agreeTermsOfService: agreeTermsOfService,
-                                        agreeConsentOfHealthData: agreeConsentOfHealthData,
-                                        agreeLocationDataTermsOfService: agreeLocationDataTermsOfService)
-                                )
-                            } else if appState.userRole == .AQD_USER {
-                                Task {
-                                    await viewModel.updateToBothUser()
-                                }
-                            }
-                        } else {
-                            errorMessage = "필수 약관에 모두 동의해주세요."
-                            showErrorAlert = true
+                    .padding(.horizontal)
+                    
+                    HStack(spacing: 16) {
+                        Button("Reset") {
+                            agreePrivacyPolicy = false
+                            agreeTermsOfService = false
+                            agreeConsentOfHealthData = false
+                            agreeLocationDataTermsOfService = false
                         }
-                    }) {
-                        Text("Next")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(allRequiredAgreed ? Color.blue : Color.gray)
-                            .cornerRadius(10)
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(10)
+
+                        Button(action: {
+                            if allRequiredAgreed {
+                                if appState.userRole == .GUEST {
+                                    navigationPath.append(
+                                        NavigationTarget.personalInfoInput(
+                                            agreePrivacyPolicy: agreePrivacyPolicy,
+                                            agreeTermsOfService: agreeTermsOfService,
+                                            agreeConsentOfHealthData: agreeConsentOfHealthData,
+                                            agreeLocationDataTermsOfService: agreeLocationDataTermsOfService)
+                                    )
+                                } else if appState.userRole == .AQD_USER {
+                                    Task {
+                                        await viewModel.updateToBothUser()
+                                    }
+                                }
+                            } else {
+                                errorMessage = "필수 약관에 모두 동의해주세요."
+                                showErrorAlert = true
+                            }
+                        }) {
+                            Text("Next")
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(allRequiredAgreed ? Color.blue : Color.gray)
+                                .cornerRadius(10)
+                        }
+                        .disabled(!allRequiredAgreed)
                     }
-                    .padding(.horizontal, 30)
-                    .disabled(!allRequiredAgreed)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 20)
 
                     Spacer()
                 }
@@ -145,6 +163,8 @@ struct TermsView: View {
                     .foregroundColor(.red)
                     .bold()
                 Text(title)
+                    .fontWeight(.medium)
+                
                 Spacer()
                 Button(action: {
                     selectedSheet = type

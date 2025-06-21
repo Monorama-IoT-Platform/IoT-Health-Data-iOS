@@ -10,16 +10,31 @@ class ProjectViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var errorMessage: String?
-    @Published var isRegisted = false
-    @Published var registeredProjectId: Int64? = nil
+    
+    @Published var registeredProjectId: Int64? {
+        didSet {
+            if let id = registeredProjectId {
+                UserDefaults.standard.set(id, forKey: "registeredProjectId")
+                appState.registeredProjectId = id // ✅ AppState 반영
+            } else {
+                UserDefaults.standard.removeObject(forKey: "registeredProjectId")
+                appState.registeredProjectId = nil // ✅ AppState 반영
+            }
+        }
+    }
+
+    var isRegisted: Bool {
+        registeredProjectId != nil
+    }
 
     init(appState: AppState) {
-        
         self.appState = appState
-        isRegisted = UserDefaults.standard.bool(forKey: "isProjectRegistered")
         
-        if isRegisted {
-            registeredProjectId = UserDefaults.standard.object(forKey: "registeredProjectId") as? Int64
+        if let savedId = UserDefaults.standard.object(forKey: "registeredProjectId") as? Int64 {
+            self.registeredProjectId = savedId
+            self.appState.registeredProjectId = savedId
+        } else {
+            self.registeredProjectId = nil
         }
     }
 
@@ -35,22 +50,27 @@ class ProjectViewModel: ObservableObject {
 
         isLoading = false
     }
-    
+
     func registerProject(projectId: Int64) async {
         isLoading = true
         errorMessage = nil
 
         do {
-            isRegisted = try await projectService.registProject(projectId: projectId)
+            let success = try await projectService.registProject(projectId: projectId)
+            if success {
+                self.registeredProjectId = projectId
+            } else {
+                errorMessage = "프로젝트 등록에 실패했습니다."
+            }
         } catch {
-            errorMessage = "프로젝트 등록에 실패했습니다: \(error.localizedDescription)"
+            errorMessage = "프로젝트 등록 중 오류 발생: \(error.localizedDescription)"
         }
 
         isLoading = false
     }
-    
+
     func getProjectInfo(projectId: Int64) async {
-        info = nil  // 이전 정보 초기화
+        info = nil
         errorMessage = nil
         isLoading = true
 
@@ -62,4 +82,9 @@ class ProjectViewModel: ObservableObject {
 
         isLoading = false
     }
+
+    func resetRegistration() {
+        registeredProjectId = nil
+    }
 }
+

@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct IoT_Health_Data_iOSApp: App {
     @StateObject private var appState = AppState()
-    private let tokenManager = TokenManager.shared
+//    private let tokenManager = TokenManager.shared
     
 //    init() {
 //        do {
