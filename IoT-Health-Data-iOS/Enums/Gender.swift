@@ -3,6 +3,8 @@ enum Gender: String, Codable {
     case FEMALE
     case OTHER
     case UNKNOWN
+    
+    var id: String { self.rawValue }
 
     static func from(_ gender: String) -> Gender {
         switch gender {
